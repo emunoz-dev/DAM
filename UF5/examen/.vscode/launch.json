@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "principal.Application",
+            "projectName": "examen_461a974b"
+        },
+        {
+            "type": "java",
+            "name": "typeData",
+            "request": "launch",
+            "mainClass": "src.typeData",
+            "projectName": "examen_461a974b"
+        },
+        {
+            "type": "java",
+            "name": "typeData",
+            "request": "launch",
+            "mainClass": "typeData",
+            "projectName": "examen_461a974b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
