@@ -1,0 +1,1 @@
+[Abdicación de un Rey](https://aceptaelreto.com/problem/statement.php?id=214&cat=23)

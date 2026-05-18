@@ -43,7 +43,6 @@ public class Application {
         
       }
       for (Category auxCategory : categoryList) {
-        auxCategory.sortingId();
         for (Game auxGames : auxCategory.getGames()) {
           System.out.println(auxGames.getIdGames());
         }
