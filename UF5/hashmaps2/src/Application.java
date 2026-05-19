@@ -11,13 +11,13 @@ public class Application {
     try {
       app.inputData();
       app.outputData();
-    } catch (Exception e) {
+    } catch (MyException e) {
       e.printStackTrace();
     }
     
   }
 
-  public void inputData() throws MyErrors {
+  public void inputData() throws MyException {
     Scanner sc = new Scanner(System.in);
     String inputD; String[] namesKings, namesSuccesors;
     int inNumKings = -1, inNumSucc = -1;
@@ -31,7 +31,7 @@ public class Application {
         inNumKings = sc.nextInt();
         sc.nextLine();
       } catch (InputMismatchException e) {
-        throw new MyErrors(100, e.getStackTrace() );
+        throw new MyException(100, e );
       }
 
       if (inNumKings != 0) {
@@ -39,7 +39,7 @@ public class Application {
         inputD = sc.nextLine();
         namesKings = inputD.split("\s");
         if (inNumKings != namesKings.length ) {
-          throw new MyErrors(101, null);
+          throw new MyException(101, null);
         }
         inputD = null; // Clean
         System.out.println("Input the number of successor to the frost trhone:");
@@ -47,16 +47,16 @@ public class Application {
           inNumSucc = sc.nextInt();
           sc.nextLine();
         } catch (InputMismatchException e) {
-          throw new MyErrors(100, e.getStackTrace() );
+          throw new MyException(100, e );
         }
         if (inNumSucc < 1) {
-          throw new MyErrors(102, null);
+          throw new MyException(102, null);
         }
         System.out.println("Input the names of all sucessors on dynasty, separated by spaces");
         inputD = sc.nextLine();
         namesSuccesors= inputD.split("\s");
         if (inNumSucc != namesSuccesors.length ) {
-          throw new MyErrors(101, null);
+          throw new MyException(101, null);
         }
 
 

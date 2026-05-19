@@ -15,8 +15,8 @@ public class Init {
 
     try {
       input.data();
-    } catch (MyExceptions me) {
-      me.printMyError();
+    } catch (MyException me) {
+      me.printStackTrace();
     }
     
     

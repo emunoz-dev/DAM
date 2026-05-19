@@ -12,12 +12,12 @@ public class Application {
     Application ap = new Application();
     try {
       ap.optionsArgs(args);
-    } catch (myErrors e) {
-      System.out.println(e.getErrorM());
+    } catch (MyException e) {
+      e.printStackTrace();
     }
   }
 
-  public void optionsArgs(String args[])  throws myErrors {
+  public void optionsArgs(String args[])  throws MyException {
     int aux = -1;
     int sz;
 
@@ -40,7 +40,7 @@ public class Application {
               wStr[x] = wAux.inOut(); 
             }
           } catch (NumberFormatException e) {
-            throw new myErrors(102, e.getStackTrace()) ;
+            throw new MyException(102, e) ;
           }      
           break;
         case "-L": // List Array (vector)
@@ -50,7 +50,7 @@ public class Application {
           try {
             sz = Integer.parseInt(args[aux]);
           } catch (NumberFormatException e) {
-            throw new myErrors(102, e.getStackTrace()) ;
+            throw new MyException(102, e ) ;
           }
           for (int x = 0; x < sz; x++) {
             WatchStrokes wAux = new WatchStrokes();
@@ -64,7 +64,7 @@ public class Application {
           try {
             sz = Integer.parseInt(args[aux]);
           } catch (NumberFormatException e) {
-            throw new myErrors(102, e.getStackTrace());
+            throw new MyException(102, e );
           }
           for (int x = 0; x < sz; x++) {
             WatchStrokes wAux = new WatchStrokes();
@@ -92,7 +92,7 @@ public class Application {
           break;
         default:
           if (aux == -1) {
-            throw new myErrors(101, null);
+            throw new MyException(101, null);
           }
         }
     }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Application {
 
-  public static void main(String[] args) throws MyExceptions {
+  public static void main(String[] args) throws MyException {
     final String FIN = "FIN";
     Scanner sc = new Scanner(System.in);
     String inputCategory = null;
@@ -30,7 +30,12 @@ public class Application {
         try {
           inputGame = auxInputGame.split("\s");
         } catch (Exception e) {
-          throw new MyExceptions(100, e.getStackTrace() ); // Over args
+          //e.printStackTrace();
+          throw new MyException(100, e ); // Over args
+          
+        }
+        if (inputGame.length < 5) {
+          throw new MyException(100, null);
         }
       
         if (inputGame.length == 5 && !inputGame[0].equals(FIN)) {

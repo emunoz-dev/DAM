@@ -1,12 +1,15 @@
-import java.util.List;
-import java.util.ArrayList;
+
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
-public class Category {
+public class CategoryArrays {
   private String category;
 
-  private List<Game> g = new ArrayList<Game>();
+  private Game[] g;
+  private int gameLenght;
+
   public Comparator<Game> idComparator = new Comparator<Game>() {
     @Override
     public int compare(Game g1, Game g2) {
@@ -14,29 +17,31 @@ public class Category {
     }
   };
 
-  public Category(String category) {
+  public CategoryArrays(String category, int gameLenght) {
     this.category = category;
+    this.gameLenght = gameLenght;
+
+    g = new Game[gameLenght];
   }
 
-  public List<Game> getGames() {
+  public Game[] getGames() {
     return this.g;
   }
 
   public void addGame(Game game) {
-    g.add(game);
+    for (int i = 0; i < this.g.length ; i++) {
+      if (this.g[i] == null) {
+        this.g[i] = game;
+      }
+    }
   }
 
-  public void deleteGame(Game game) {
-    int posDelete = -1;
-
-    posDelete = searchId(game.getIdGames());
-    g.remove(posDelete);
-  }
+  
 
   public void sortingId() {
     //Comparator<Game> idComparator = (g1, g2) ->  g2.getIdGames() - g1.getIdGames();
     
-    Collections.sort(this.g, idComparator);
+    Arrays.sort(this.g, idComparator);
   }
 
   public int searchId(int auxId) {
@@ -44,7 +49,7 @@ public class Category {
 
     sortingId();
     Game auxGame = new Game(auxId);
-    posFind = Collections.binarySearch(this.g , auxGame, idComparator);
+    posFind = Arrays.binarySearch(this.g , auxGame, idComparator);
     return posFind;
   }
 
@@ -52,11 +57,5 @@ public class Category {
     for ( Game itemGame : getGames() ) {
       System.out.println(itemGame.getIdGames());
     }
-  }
-
-  public void returnGameById (int inId) {
-    int pos = searchId(inId);
-
-    System.out.print(this.g.get(pos).getHouse() );
   }
 }

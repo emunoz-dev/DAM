@@ -13,6 +13,10 @@ public class Game {
     this.visitorResult = visitorResult;
   }
 
+  public Game(int idGames) {
+    this.idGames = idGames;
+  }
+
   public String getHouse() {
     return this.house;
   }
