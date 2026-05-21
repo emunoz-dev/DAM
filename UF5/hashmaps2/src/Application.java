@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Application {
-  Map<Integer,Dynasty> mapDynasty = new HashMap<>();
+  Map<Integer,Dynasty> mapDynasty = new HashMap<Integer, Dynasty>();
   public static void main(String[] args) {
     Application app = new Application();
     try {
@@ -76,7 +76,12 @@ public class Application {
     for (Map.Entry<Integer, Dynasty> auxMap : mapDynasty.entrySet() ) {
       System.out.println("The code of dynasty is:");
       System.out.println(auxMap.getKey());
+      //System.out.println(auxMap.getValue().numKings);
     }
 
+  }
+
+  public Dynasty getDynastyByKey(Integer inId) {
+    return mapDynasty.get(inId);
   }
 }

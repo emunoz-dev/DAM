@@ -34,7 +34,7 @@ public class Application {
           throw new MyException(100, e ); // Over args
           
         }
-        if (inputGame.length < 5) {
+        if (inputGame.length < 5 && !inputGame[0].equals(FIN)) {
           throw new MyException(100, null);
         }
       

@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class Category {
   private String category;
 
-  private List<Game> g = new ArrayList<Game>();
+  private List<Game> g = new ArrayList<>();
   public Comparator<Game> idComparator = new Comparator<Game>() {
     @Override
     public int compare(Game g1, Game g2) {
@@ -36,7 +36,8 @@ public class Category {
   public void sortingId() {
     //Comparator<Game> idComparator = (g1, g2) ->  g2.getIdGames() - g1.getIdGames();
     
-    Collections.sort(this.g, idComparator);
+    //Collections.sort(this.g, idComparator);
+    Collections.sort(this.g , idComparator);
   }
 
   public int searchId(int auxId) {
