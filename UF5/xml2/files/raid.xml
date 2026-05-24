@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<raid>
+  <Player name="emunoz">
+    <race>Tauren</race>
+    <stats>
+      <health>1000</health>
+      <armor>300</armor>
+      <baseAttack>20</baseAttack>
+      <baseAvoidAttacks>15</baseAvoidAttacks>
+      <baseThreat>150</baseThreat>
+    </stats>
+    <class kind="Warrior">
+      <statShield>350</statShield>
+      <probabilityBlock>50</probabilityBlock>
+    </class>
+  </Player>
+  <Player name="Torator">
+    <race>Elf</race>
+    <stats>
+      <health>1000</health>
+      <armor>20</armor>
+      <baseAttack>5</baseAttack>
+      <baseAvoidAttacks>10</baseAvoidAttacks>
+      <baseThreat>5</baseThreat>
+    </stats>
+    <class kind="Priest">
+      <mana>1000</mana>
+    </class>
+  </Player>
+  <Player name="Dompakawen">
+    <race>NightElf</race>
+    <stats>
+      <health>1000</health>
+      <armor>20</armor>
+      <baseAttack>50</baseAttack>
+      <baseAvoidAttacks>10</baseAvoidAttacks>
+      <baseThreat>5</baseThreat>
+    </stats>
+    <class kind="Mage">
+      <mana>1000</mana>
+    </class>
+  </Player>
+</raid>
